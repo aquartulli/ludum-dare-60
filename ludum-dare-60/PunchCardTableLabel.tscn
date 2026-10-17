@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://rla6ew1plxej"]
+
+[ext_resource type="Script" uid="uid://bkbo55qiwaxby" path="res://PunchCardTableLabel.cs" id="1_c0cof"]
+[ext_resource type="PackedScene" uid="uid://beucb1m4iafj5" path="res://PunchCardTableCell.tscn" id="1_fhneq"]
+[ext_resource type="LabelSettings" uid="uid://d3u7um2k18bel" path="res://PunchCardLabelSettings.tres" id="2_c0cof"]
+
+[node name="PunchCardTableLabel" type="BoxContainer" unique_id=255928909]
+offset_right = 32.0
+offset_bottom = 16.0
+script = ExtResource("1_c0cof")
+Text = "A"
+
+[node name="PunchCardTableCell" parent="." unique_id=70189786 instance=ExtResource("1_fhneq")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PunchCardTableCell" unique_id=1593334339]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "A"
+label_settings = ExtResource("2_c0cof")
+horizontal_alignment = 1
+vertical_alignment = 1

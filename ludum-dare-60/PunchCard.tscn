@@ -1,0 +1,274 @@
+[gd_scene format=3 uid="uid://ds8cjpo5mpf6k"]
+
+[ext_resource type="Script" uid="uid://d3m5p0kx53mfl" path="res://PunchCard.cs" id="1_5u5x7"]
+[ext_resource type="LabelSettings" uid="uid://d3u7um2k18bel" path="res://PunchCardLabelSettings.tres" id="1_d4a26"]
+[ext_resource type="PackedScene" uid="uid://rla6ew1plxej" path="res://PunchCardTableLabel.tscn" id="2_8l1o0"]
+[ext_resource type="PackedScene" uid="uid://cau6y542upsh0" path="res://PunchCardInputRow.tscn" id="3_8l1o0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5u5x7"]
+content_margin_top = 0.0
+content_margin_bottom = 8.0
+bg_color = Color(0.9, 0.7896, 0.612, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+expand_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ld3uh"]
+color = Color(0.1584723, 0.15847233, 0.1584723, 1)
+
+[node name="PunchCard" type="Node2D" unique_id=1246786685]
+script = ExtResource("1_5u5x7")
+Text = "MOV R1 R2"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1815472493]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -42.0
+offset_right = 272.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5u5x7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=421137276]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="PanelContainer/VBoxContainer" unique_id=81790908]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Falcon Punch Card"
+label_settings = ExtResource("1_d4a26")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=254233110]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxLine_ld3uh")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=1001956123]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer" unique_id=725817097]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HeaderContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=854672608]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PunchCardTableLabel" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=255928909 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = ""
+
+[node name="PunchCardTableLabel38" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=1319559505 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+
+[node name="PunchCardTableLabel2" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=1160920658 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "B"
+
+[node name="PunchCardTableLabel3" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=150553010 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "C"
+
+[node name="PunchCardTableLabel4" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=2048212158 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "D"
+
+[node name="PunchCardTableLabel5" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=1111692854 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "E"
+
+[node name="PunchCardTableLabel6" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=799689937 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "F"
+
+[node name="PunchCardTableLabel7" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=649507911 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "G"
+
+[node name="PunchCardTableLabel8" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=349556175 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "H"
+
+[node name="PunchCardTableLabel9" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=1289854663 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "I"
+
+[node name="PunchCardTableLabel10" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=92259541 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "J"
+
+[node name="PunchCardTableLabel11" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=523495992 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "K"
+
+[node name="PunchCardTableLabel12" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=274590109 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "L"
+
+[node name="PunchCardTableLabel13" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=1798776549 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "M"
+
+[node name="PunchCardTableLabel14" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=1214001262 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "N"
+
+[node name="PunchCardTableLabel15" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=1646246288 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "O"
+
+[node name="PunchCardTableLabel16" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=1137811854 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "P"
+
+[node name="PunchCardTableLabel17" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=1938678414 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "Q"
+
+[node name="PunchCardTableLabel18" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=2069430183 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "R"
+
+[node name="PunchCardTableLabel19" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=136152229 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "S"
+
+[node name="PunchCardTableLabel20" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=184137415 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "T"
+
+[node name="PunchCardTableLabel21" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=1367966233 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "U"
+
+[node name="PunchCardTableLabel22" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=121608046 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "V"
+
+[node name="PunchCardTableLabel23" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=1577709992 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "W"
+
+[node name="PunchCardTableLabel24" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=128511088 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "X"
+
+[node name="PunchCardTableLabel25" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=2135324229 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "Y"
+
+[node name="PunchCardTableLabel26" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=1640649792 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "Z"
+
+[node name="PunchCardTableLabel27" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=2076533048 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "_"
+
+[node name="PunchCardTableLabel28" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=666571838 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "0"
+
+[node name="PunchCardTableLabel29" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=1555689503 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "1"
+
+[node name="PunchCardTableLabel30" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=2116365303 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "2"
+
+[node name="PunchCardTableLabel31" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=1778273909 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "3"
+
+[node name="PunchCardTableLabel32" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=659772195 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "4"
+
+[node name="PunchCardTableLabel33" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=699536021 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "5"
+
+[node name="PunchCardTableLabel34" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=1834545974 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "6"
+
+[node name="PunchCardTableLabel35" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=798446564 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "7"
+
+[node name="PunchCardTableLabel36" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=1103318462 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "8"
+
+[node name="PunchCardTableLabel37" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HeaderContainer" unique_id=238924879 instance=ExtResource("2_8l1o0")]
+layout_mode = 2
+Text = "9"
+
+[node name="InputRowContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=713965933]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PunchCardInputRow" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/InputRowContainer" unique_id=424040384 instance=ExtResource("3_8l1o0")]
+layout_mode = 2
+
+[node name="PunchCardInputRow2" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/InputRowContainer" unique_id=1783737718 instance=ExtResource("3_8l1o0")]
+layout_mode = 2
+InstructionNumber = 1
+
+[node name="PunchCardInputRow3" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/InputRowContainer" unique_id=1005850364 instance=ExtResource("3_8l1o0")]
+layout_mode = 2
+InstructionNumber = 2
+
+[node name="PunchCardInputRow4" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/InputRowContainer" unique_id=648828872 instance=ExtResource("3_8l1o0")]
+layout_mode = 2
+InstructionNumber = 3
+
+[node name="PunchCardInputRow5" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/InputRowContainer" unique_id=1921959813 instance=ExtResource("3_8l1o0")]
+layout_mode = 2
+InstructionNumber = 4
+
+[node name="PunchCardInputRow6" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/InputRowContainer" unique_id=857249690 instance=ExtResource("3_8l1o0")]
+layout_mode = 2
+InstructionNumber = 5
+
+[node name="PunchCardInputRow7" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/InputRowContainer" unique_id=1993076291 instance=ExtResource("3_8l1o0")]
+layout_mode = 2
+InstructionNumber = 6
+
+[node name="PunchCardInputRow8" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/InputRowContainer" unique_id=869314484 instance=ExtResource("3_8l1o0")]
+layout_mode = 2
+InstructionNumber = 7
+
+[node name="PunchCardInputRow9" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/InputRowContainer" unique_id=822760613 instance=ExtResource("3_8l1o0")]
+layout_mode = 2
+InstructionNumber = 8
+
+[node name="PunchCardInputRow10" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/InputRowContainer" unique_id=697906755 instance=ExtResource("3_8l1o0")]
+layout_mode = 2
+InstructionNumber = 9
+
+[node name="PunchCardInputRow11" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/InputRowContainer" unique_id=884601254 instance=ExtResource("3_8l1o0")]
+layout_mode = 2
+InstructionNumber = 10
+
+[node name="PunchCardInputRow12" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/InputRowContainer" unique_id=600477641 instance=ExtResource("3_8l1o0")]
+layout_mode = 2
+InstructionNumber = 11
+
+[node name="PunchCardInputRow13" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/InputRowContainer" unique_id=1491419027 instance=ExtResource("3_8l1o0")]
+layout_mode = 2
+InstructionNumber = 12

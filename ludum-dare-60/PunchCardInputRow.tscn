@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://cau6y542upsh0"]
+
+[ext_resource type="PackedScene" uid="uid://crhmnwsrmj7h0" path="res://PunchCardTableInputCell.tscn" id="1_mry4n"]
+[ext_resource type="PackedScene" uid="uid://rla6ew1plxej" path="res://PunchCardTableLabel.tscn" id="1_qsrlf"]
+[ext_resource type="Script" uid="uid://daletu2wc13il" path="res://PunchCardInputRow.cs" id="1_tyhoe"]
+
+[node name="PunchCardInputRow" type="HBoxContainer" unique_id=424040384]
+theme_override_constants/separation = 0
+script = ExtResource("1_tyhoe")
+
+[node name="InstructionNumberLabel" parent="." unique_id=255928909 instance=ExtResource("1_qsrlf")]
+unique_name_in_owner = true
+layout_mode = 2
+Text = "0"
+
+[node name="InputContainer" type="HBoxContainer" parent="." unique_id=1097744963]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PunchCardTableCheckBox" parent="InputContainer" unique_id=1056058828 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox2" parent="InputContainer" unique_id=1107191407 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox3" parent="InputContainer" unique_id=538778553 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox4" parent="InputContainer" unique_id=2081831742 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox5" parent="InputContainer" unique_id=1224638064 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox6" parent="InputContainer" unique_id=1717164812 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox7" parent="InputContainer" unique_id=800228557 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox8" parent="InputContainer" unique_id=1732002462 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox9" parent="InputContainer" unique_id=1795480357 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox10" parent="InputContainer" unique_id=1898149831 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox11" parent="InputContainer" unique_id=480523096 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox12" parent="InputContainer" unique_id=1043564591 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox13" parent="InputContainer" unique_id=174694441 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox14" parent="InputContainer" unique_id=1824484947 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox15" parent="InputContainer" unique_id=292979654 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox16" parent="InputContainer" unique_id=1912311369 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox17" parent="InputContainer" unique_id=700293088 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox18" parent="InputContainer" unique_id=1785251582 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox19" parent="InputContainer" unique_id=1625032035 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox20" parent="InputContainer" unique_id=1771234123 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox21" parent="InputContainer" unique_id=1572293589 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox22" parent="InputContainer" unique_id=448075039 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox23" parent="InputContainer" unique_id=1174939847 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox24" parent="InputContainer" unique_id=471689582 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox25" parent="InputContainer" unique_id=1964796879 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox26" parent="InputContainer" unique_id=1780934510 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox27" parent="InputContainer" unique_id=859372444 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox28" parent="InputContainer" unique_id=1381008995 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox29" parent="InputContainer" unique_id=141258453 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox30" parent="InputContainer" unique_id=1740731137 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox31" parent="InputContainer" unique_id=684406429 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox32" parent="InputContainer" unique_id=1525124967 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox33" parent="InputContainer" unique_id=2006518974 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox34" parent="InputContainer" unique_id=546233223 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox35" parent="InputContainer" unique_id=2042219771 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox36" parent="InputContainer" unique_id=237026015 instance=ExtResource("1_mry4n")]
+layout_mode = 2
+
+[node name="PunchCardTableCheckBox37" parent="InputContainer" unique_id=1052282521 instance=ExtResource("1_mry4n")]
+layout_mode = 2

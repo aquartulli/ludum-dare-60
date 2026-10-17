@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://crhmnwsrmj7h0"]
+
+[ext_resource type="Script" uid="uid://dhfrq5eytsiev" path="res://PunchCardTableInputCell.cs" id="1_v2v1e"]
+[ext_resource type="PackedScene" uid="uid://beucb1m4iafj5" path="res://PunchCardTableCell.tscn" id="2_kecmm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_icxuw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_epqf2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e7pjb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qntc3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h368b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ri5tg"]
+
+[node name="PunchCardTableInputCell" type="BoxContainer" unique_id=1056058828]
+offset_right = 32.0
+offset_bottom = 16.0
+script = ExtResource("1_v2v1e")
+
+[node name="PunchCardTableCell" parent="." unique_id=70189786 instance=ExtResource("2_kecmm")]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="PunchCardTableCell" unique_id=1215411979]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_icxuw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_epqf2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_e7pjb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_qntc3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_h368b")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ri5tg")

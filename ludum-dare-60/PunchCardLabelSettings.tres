@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://d3u7um2k18bel"]
+
+[sub_resource type="SystemFont" id="SystemFont_csllg"]
+font_names = PackedStringArray("Cascadia Mono")
+
+[resource]
+font = SubResource("SystemFont_csllg")
+font_size = 12
+font_color = Color(0, 0, 0, 1)
