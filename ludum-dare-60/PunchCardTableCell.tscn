@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://beucb1m4iafj5"]
 
 [node name="PunchCardTableCell" type="Control" unique_id=70189786]
-custom_minimum_size = Vector2(24, 16)
+custom_minimum_size = Vector2(20, 16)
 layout_mode = 3
 anchors_preset = 0

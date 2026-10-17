@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://cb3pgp45g78t4"]
+
+[ext_resource type="PackedScene" uid="uid://b1g4pyi1vaxql" path="res://MemoryCellUI.tscn" id="1_uaikq"]
+[ext_resource type="Script" uid="uid://dpr48wx3nsh02" path="res://MemoryRowUI.cs" id="1_udu6j"]
+
+[sub_resource type="SystemFont" id="SystemFont_p343c"]
+font_names = PackedStringArray("Cascadia Code")
+font_weight = 800
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_uaikq"]
+font = SubResource("SystemFont_p343c")
+font_size = 12
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_udu6j"]
+color = Color(1, 1, 1, 1)
+grow_begin = 8.0
+grow_end = 8.0
+vertical = true
+
+[node name="MemoryRowUI" type="HBoxContainer" unique_id=789723176]
+offset_right = 322.0
+offset_bottom = 16.0
+script = ExtResource("1_udu6j")
+
+[node name="AddressLabel" type="Label" parent="." unique_id=112790250]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+text = "0x00"
+label_settings = SubResource("LabelSettings_uaikq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="." unique_id=119322881]
+layout_mode = 2
+theme_override_constants/separation = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_udu6j")
+
+[node name="MemoryCellContainer" type="HBoxContainer" parent="." unique_id=90794985]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="MemoryCellUI" parent="MemoryCellContainer" unique_id=241861516 instance=ExtResource("1_uaikq")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MemoryCellUI2" parent="MemoryCellContainer" unique_id=946015931 instance=ExtResource("1_uaikq")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MemoryCellUI3" parent="MemoryCellContainer" unique_id=1577397926 instance=ExtResource("1_uaikq")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MemoryCellUI4" parent="MemoryCellContainer" unique_id=1318473447 instance=ExtResource("1_uaikq")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MemoryCellUI5" parent="MemoryCellContainer" unique_id=1945101363 instance=ExtResource("1_uaikq")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MemoryCellUI6" parent="MemoryCellContainer" unique_id=1648077170 instance=ExtResource("1_uaikq")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MemoryCellUI7" parent="MemoryCellContainer" unique_id=1946290387 instance=ExtResource("1_uaikq")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MemoryCellUI8" parent="MemoryCellContainer" unique_id=831642546 instance=ExtResource("1_uaikq")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MemoryCellUI9" parent="MemoryCellContainer" unique_id=452979799 instance=ExtResource("1_uaikq")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MemoryCellUI10" parent="MemoryCellContainer" unique_id=77560311 instance=ExtResource("1_uaikq")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MemoryCellUI11" parent="MemoryCellContainer" unique_id=1781124567 instance=ExtResource("1_uaikq")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MemoryCellUI12" parent="MemoryCellContainer" unique_id=2034647507 instance=ExtResource("1_uaikq")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MemoryCellUI13" parent="MemoryCellContainer" unique_id=133364563 instance=ExtResource("1_uaikq")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MemoryCellUI14" parent="MemoryCellContainer" unique_id=1116817673 instance=ExtResource("1_uaikq")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MemoryCellUI15" parent="MemoryCellContainer" unique_id=1156680853 instance=ExtResource("1_uaikq")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MemoryCellUI16" parent="MemoryCellContainer" unique_id=544373590 instance=ExtResource("1_uaikq")]
+layout_mode = 2
+size_flags_horizontal = 3

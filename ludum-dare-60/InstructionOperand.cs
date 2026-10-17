@@ -37,4 +37,11 @@ public readonly struct InstructionOperand
 
         return (RegisterName)_Value;
     }
+
+    public override string ToString() => Type switch
+    {
+        InstructionOperandType.Register => ((RegisterName)_Value).ToString(),
+        InstructionOperandType.Immediate => _Value.ToString(),
+        _ => Type.ToString()
+    };
 }

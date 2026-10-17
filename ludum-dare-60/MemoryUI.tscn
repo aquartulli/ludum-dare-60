@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://dor1axyhva0ip"]
+
+[ext_resource type="StyleBox" uid="uid://cg110xncp6j0v" path="res://ComputerPanelStyleBox.tres" id="1_art6i"]
+[ext_resource type="Script" uid="uid://c1ilf7ebxjtbw" path="res://MemoryUI.cs" id="2_ddepa"]
+[ext_resource type="PackedScene" uid="uid://cb3pgp45g78t4" path="res://MemoryRowUI.tscn" id="2_k3cos"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vje1y"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="PanelContainer" type="PanelContainer" unique_id=1072757647]
+theme_override_styles/panel = ExtResource("1_art6i")
+script = ExtResource("2_ddepa")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1085052773]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=585491718]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "MEMORY MODULE"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=723561274]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=191609731]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer" unique_id=100137758]
+layout_mode = 2
+text = "ADDRESS"
+
+[node name="Address" type="SpinBox" parent="VBoxContainer/HBoxContainer/HBoxContainer" unique_id=512567563]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 255.0
+
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1760076199]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1949583697]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=557718307]
+layout_mode = 2
+text = "DATA"
+
+[node name="Data" type="SpinBox" parent="VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=1399415468]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 255.0
+
+[node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1187094977]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LoadButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=272936687]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "LOAD"
+
+[node name="StoreButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=737316321]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "STORE"
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=557224531]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vje1y")
+
+[node name="MemoryRowContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer" unique_id=625455108]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MemoryRowUI" parent="VBoxContainer/PanelContainer/MemoryRowContainer" unique_id=789723176 instance=ExtResource("2_k3cos")]
+layout_mode = 2
+
+[node name="MemoryRowUI2" parent="VBoxContainer/PanelContainer/MemoryRowContainer" unique_id=860414425 instance=ExtResource("2_k3cos")]
+layout_mode = 2
+RowAddress = 16
+
+[node name="MemoryRowUI3" parent="VBoxContainer/PanelContainer/MemoryRowContainer" unique_id=2057210047 instance=ExtResource("2_k3cos")]
+layout_mode = 2
+RowAddress = 32
+
+[node name="MemoryRowUI4" parent="VBoxContainer/PanelContainer/MemoryRowContainer" unique_id=537159515 instance=ExtResource("2_k3cos")]
+layout_mode = 2
+RowAddress = 48
+
+[node name="MemoryRowUI5" parent="VBoxContainer/PanelContainer/MemoryRowContainer" unique_id=1602412129 instance=ExtResource("2_k3cos")]
+layout_mode = 2
+RowAddress = 64
+
+[node name="MemoryRowUI6" parent="VBoxContainer/PanelContainer/MemoryRowContainer" unique_id=1915606431 instance=ExtResource("2_k3cos")]
+layout_mode = 2
+RowAddress = 80
+
+[node name="MemoryRowUI7" parent="VBoxContainer/PanelContainer/MemoryRowContainer" unique_id=757287969 instance=ExtResource("2_k3cos")]
+layout_mode = 2
+RowAddress = 96
+
+[node name="MemoryRowUI8" parent="VBoxContainer/PanelContainer/MemoryRowContainer" unique_id=845628970 instance=ExtResource("2_k3cos")]
+layout_mode = 2
+RowAddress = 112
+
+[node name="MemoryRowUI9" parent="VBoxContainer/PanelContainer/MemoryRowContainer" unique_id=674581093 instance=ExtResource("2_k3cos")]
+layout_mode = 2
+RowAddress = 128
+
+[node name="MemoryRowUI10" parent="VBoxContainer/PanelContainer/MemoryRowContainer" unique_id=254468546 instance=ExtResource("2_k3cos")]
+layout_mode = 2
+RowAddress = 144
+
+[node name="MemoryRowUI11" parent="VBoxContainer/PanelContainer/MemoryRowContainer" unique_id=1610005956 instance=ExtResource("2_k3cos")]
+layout_mode = 2
+RowAddress = 160
+
+[node name="MemoryRowUI12" parent="VBoxContainer/PanelContainer/MemoryRowContainer" unique_id=1500692052 instance=ExtResource("2_k3cos")]
+layout_mode = 2
+RowAddress = 176
+
+[node name="MemoryRowUI13" parent="VBoxContainer/PanelContainer/MemoryRowContainer" unique_id=2077279472 instance=ExtResource("2_k3cos")]
+layout_mode = 2
+RowAddress = 192
+
+[node name="MemoryRowUI14" parent="VBoxContainer/PanelContainer/MemoryRowContainer" unique_id=483225872 instance=ExtResource("2_k3cos")]
+layout_mode = 2
+RowAddress = 208
+
+[node name="MemoryRowUI15" parent="VBoxContainer/PanelContainer/MemoryRowContainer" unique_id=1735921171 instance=ExtResource("2_k3cos")]
+layout_mode = 2
+RowAddress = 224
+
+[node name="MemoryRowUI16" parent="VBoxContainer/PanelContainer/MemoryRowContainer" unique_id=96791206 instance=ExtResource("2_k3cos")]
+layout_mode = 2
+RowAddress = 240

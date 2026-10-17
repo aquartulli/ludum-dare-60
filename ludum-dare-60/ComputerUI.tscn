@@ -1,33 +1,85 @@
 [gd_scene format=3 uid="uid://ca3ha7wdr57kh"]
 
-[ext_resource type="PackedScene" uid="uid://c51rma2ks8nnu" path="res://RegisterUI.tscn" id="1_qjd30"]
+[ext_resource type="Script" uid="uid://deadynm2irjcm" path="res://ComputerUI.cs" id="1_el7wc"]
+[ext_resource type="PackedScene" uid="uid://b4f0f0ujblr67" path="res://RegisterModuleUI.tscn" id="1_stob6"]
+[ext_resource type="PackedScene" uid="uid://bo1rpmxhx1jjd" path="res://InstructionModuleUI.tscn" id="2_el7wc"]
+[ext_resource type="PackedScene" uid="uid://dor1axyhva0ip" path="res://MemoryUI.tscn" id="4_el7wc"]
 
-[node name="ComputerUI" type="Control" unique_id=1004027872]
-layout_mode = 3
-anchors_preset = 0
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ul38a"]
+size = Vector2(1400, 720)
 
-[node name="Control" type="Control" parent="." unique_id=1394596100]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_stob6"]
+texture = SubResource("PlaceholderTexture2D_ul38a")
 
-[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1133768518]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stob6"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.53, 0, 0, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer" unique_id=524740076]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_el7wc"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.7194502, 2.3764558e-05, 1.3187826e-05, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vje1y"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.91221595, 0.00048650563, 0.0002673182, 1)
+
+[node name="ComputerUI" type="Panel" unique_id=104430449]
+offset_right = 1400.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_stob6")
+script = ExtResource("1_el7wc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1025357368]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = -191.0
+offset_right = 367.0
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=546133642]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 32
 
-[node name="Register1" parent="Control/PanelContainer/HBoxContainer" unique_id=1574588629 instance=ExtResource("1_qjd30")]
+[node name="RegisterModuleUI" parent="HBoxContainer/VBoxContainer" unique_id=1842845159 instance=ExtResource("1_stob6")]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Register2" parent="Control/PanelContainer/HBoxContainer" unique_id=1787438388 instance=ExtResource("1_qjd30")]
+[node name="InstructionModuleUI" parent="HBoxContainer/VBoxContainer" unique_id=566895265 instance=ExtResource("2_el7wc")]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Register3" parent="Control/PanelContainer/HBoxContainer" unique_id=1606493443 instance=ExtResource("1_qjd30")]
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=1689367862]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 32
+
+[node name="MemoryModuleUI" parent="HBoxContainer/VBoxContainer2" unique_id=1072757647 instance=ExtResource("4_el7wc")]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Register4" parent="Control/PanelContainer/HBoxContainer" unique_id=1416329826 instance=ExtResource("1_qjd30")]
+[node name="HaltButton" type="Button" parent="HBoxContainer/VBoxContainer2" unique_id=1923850136]
+unique_name_in_owner = true
 layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_stob6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_el7wc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vje1y")
+text = "HALT"

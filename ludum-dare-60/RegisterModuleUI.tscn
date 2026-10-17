@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://b4f0f0ujblr67"]
+
+[ext_resource type="StyleBox" uid="uid://cg110xncp6j0v" path="res://ComputerPanelStyleBox.tres" id="1_bkqpk"]
+[ext_resource type="PackedScene" uid="uid://c51rma2ks8nnu" path="res://RegisterUI.tscn" id="2_d265r"]
+[ext_resource type="Script" uid="uid://cguq0jo4gsnis" path="res://RegisterModuleUI.cs" id="2_mf0wt"]
+
+[node name="RegisterModuleUI" type="PanelContainer" unique_id=1842845159]
+theme_override_styles/panel = ExtResource("1_bkqpk")
+script = ExtResource("2_mf0wt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=800670559]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=716831075]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "REGISTER MODULE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=865747940]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Register1" parent="VBoxContainer/HBoxContainer" unique_id=1787438388 instance=ExtResource("2_d265r")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1194038727]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Register2" parent="VBoxContainer/HBoxContainer" unique_id=1650457881 instance=ExtResource("2_d265r")]
+unique_name_in_owner = true
+layout_mode = 2
+RegisterName = 1
+
+[node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1932179284]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Register3" parent="VBoxContainer/HBoxContainer" unique_id=242276210 instance=ExtResource("2_d265r")]
+unique_name_in_owner = true
+layout_mode = 2
+RegisterName = 2
+
+[node name="Spacer3" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1983057168]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Register4" parent="VBoxContainer/HBoxContainer" unique_id=2057401066 instance=ExtResource("2_d265r")]
+unique_name_in_owner = true
+layout_mode = 2
+RegisterName = 3

@@ -6,14 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cau6y542upsh0" path="res://PunchCardInputRow.tscn" id="3_8l1o0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5u5x7"]
-content_margin_top = 0.0
-content_margin_bottom = 8.0
 bg_color = Color(0.9, 0.7896, 0.612, 1)
 corner_radius_top_left = 32
 corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
-expand_margin_bottom = 12.0
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_ld3uh"]
 color = Color(0.1584723, 0.15847233, 0.1584723, 1)
@@ -28,10 +25,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -272.0
-offset_top = -42.0
-offset_right = 272.0
-offset_bottom = 42.0
+offset_left = -388.0
+offset_top = -190.5
+offset_right = 388.0
+offset_bottom = 190.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5u5x7")
@@ -57,6 +54,7 @@ theme_override_styles/separator = SubResource("StyleBoxLine_ld3uh")
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer" unique_id=725817097]
 layout_mode = 2

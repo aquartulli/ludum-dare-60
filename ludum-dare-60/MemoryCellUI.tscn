@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b1g4pyi1vaxql"]
+
+[ext_resource type="Script" uid="uid://dnmlaati7x4lw" path="res://MemoryCellUI.cs" id="1_q3scr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w4ad1"]
+font_size = 10
+
+[node name="MemoryCellUI" type="Control" unique_id=946015931]
+custom_minimum_size = Vector2(28, 16)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_q3scr")
+
+[node name="Panel" type="Panel" parent="." unique_id=241861516]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -8.0
+offset_right = 14.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ValueLabel" type="Label" parent="Panel" unique_id=1536014832]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0x00"
+label_settings = SubResource("LabelSettings_w4ad1")
+horizontal_alignment = 1
+vertical_alignment = 1

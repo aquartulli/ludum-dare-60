@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 public sealed class Instruction
 {
@@ -27,5 +28,18 @@ public sealed class Instruction
 
         OpCode = opCode;
         Operands = operands;
+    }
+
+    public override string ToString()
+    {
+        var sb = new StringBuilder();
+        sb.Append(OpCode.ToString());
+
+        foreach (var operand in Operands)
+        {
+            sb.Append($" {operand.ToString()}");
+        }
+
+        return sb.ToString();
     }
 }

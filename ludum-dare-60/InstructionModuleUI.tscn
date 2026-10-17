@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bo1rpmxhx1jjd"]
+
+[ext_resource type="StyleBox" uid="uid://cg110xncp6j0v" path="res://ComputerPanelStyleBox.tres" id="1_xj1pe"]
+[ext_resource type="Script" uid="uid://0a7x4iu35as8" path="res://InstructionModuleUI.cs" id="2_ch0ti"]
+[ext_resource type="PackedScene" uid="uid://ds8cjpo5mpf6k" path="res://PunchCard.tscn" id="3_jl583"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ul38a"]
+bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="InstructionModuleUI" type="PanelContainer" unique_id=566895265]
+theme_override_styles/panel = ExtResource("1_xj1pe")
+script = ExtResource("2_ch0ti")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1059906606]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1126688362]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "INSTRUCTION MODULE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=727739946]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1101708021]
+custom_minimum_size = Vector2(640, 320)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ul38a")
+
+[node name="PunchCardTarget" type="Control" parent="VBoxContainer/HBoxContainer/Panel" unique_id=1575133483]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PunchCard" parent="VBoxContainer/HBoxContainer/Panel/PunchCardTarget" unique_id=1246786685 instance=ExtResource("3_jl583")]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.8, 0.8)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=501616558]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1176747683]
+layout_mode = 2
+
+[node name="ProgramCounter" type="SpinBox" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer" unique_id=145250129]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 255.0
+
+[node name="FetchButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=404842653]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "FETCH"

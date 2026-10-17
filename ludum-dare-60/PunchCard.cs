@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 
 [Tool]
-public partial class PunchCard : Node
+public partial class PunchCard : Node2D
 {
     public const string PunchValues = "ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789";
     private const int _MaxStringLength = 12;
