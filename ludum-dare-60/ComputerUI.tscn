@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ca3ha7wdr57kh"]
+
+[ext_resource type="PackedScene" uid="uid://c51rma2ks8nnu" path="res://RegisterUI.tscn" id="1_qjd30"]
+
+[node name="ComputerUI" type="Control" unique_id=1004027872]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Control" type="Control" parent="." unique_id=1394596100]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1133768518]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer" unique_id=524740076]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Register1" parent="Control/PanelContainer/HBoxContainer" unique_id=1574588629 instance=ExtResource("1_qjd30")]
+layout_mode = 2
+
+[node name="Register2" parent="Control/PanelContainer/HBoxContainer" unique_id=1787438388 instance=ExtResource("1_qjd30")]
+layout_mode = 2
+
+[node name="Register3" parent="Control/PanelContainer/HBoxContainer" unique_id=1606493443 instance=ExtResource("1_qjd30")]
+layout_mode = 2
+
+[node name="Register4" parent="Control/PanelContainer/HBoxContainer" unique_id=1416329826 instance=ExtResource("1_qjd30")]
+layout_mode = 2
