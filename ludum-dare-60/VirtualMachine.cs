@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-public class VirtualMachine
+public sealed class VirtualMachine
 {
     public const int MemorySize = 256;
 
@@ -37,5 +37,23 @@ public class VirtualMachine
     public void Output(byte value)
     {
         Outputed?.Invoke(value);
+    }
+
+    public bool CompareStates(VirtualMachine vm)
+    {
+        if (_Registers.Count != vm._Registers.Count)
+        {
+            return false;
+        }
+
+        foreach (var registerName in _Registers.Keys)
+        {
+            if (!vm._Registers.TryGetValue(registerName, out var otherValue) || _Registers[registerName] != otherValue)
+            {
+                return false;
+            }
+        }
+
+        return _Memory.AsSpan().SequenceEqual(vm._Memory);
     }
 }

@@ -2,18 +2,22 @@ using System;
 
 public static class ProgramRunner
 {
-    public static void RunProgram(VirtualMachine vm, ReadOnlySpan<Instruction> instructions)
+    public static void RunProgram(VirtualMachine vm, ReadOnlySpan<Instruction> instructions) => RunProgram(vm, instructions, out _);
+
+    public static void RunProgram(VirtualMachine vm, ReadOnlySpan<Instruction> instructions, out byte programCounter)
     {
-        byte programCounter = 0;
+        programCounter = 0;
         while (true)
         {
-            if (programCounter < instructions.Length)
+            if (programCounter >= instructions.Length)
             {
-                var instruction = instructions[programCounter];
-                if (!ExecuteInstruction(vm, instruction, ref programCounter))
-                {
-                    break;
-                }
+                break;
+            }
+
+            var instruction = instructions[programCounter];
+            if (!ExecuteInstruction(vm, instruction, ref programCounter))
+            {
+                break;
             }
         }
     }
@@ -74,10 +78,10 @@ public static class ProgramRunner
     private static void ExecuteStore(VirtualMachine vm, Instruction instruction, ref byte programCounter)
     {
         var addressRegister = instruction.Operands[0].GetRegisterName();
-        var dataRegister = instruction.Operands[1].GetRegisterName();
+        var sourceRegister = instruction.Operands[1].GetRegisterName();
 
         var address = vm.GetRegisterValue(addressRegister);
-        var data = vm.GetRegisterValue(dataRegister);
+        var data = vm.GetRegisterValue(sourceRegister);
 
         vm.SetMemoryValue(address, data);
         programCounter++;
@@ -115,12 +119,12 @@ public static class ProgramRunner
     private static void ExecuteLoad(VirtualMachine vm, Instruction instruction, ref byte programCounter)
     {
         var addressRegister = instruction.Operands[0].GetRegisterName();
-        var dataRegister = instruction.Operands[1].GetRegisterName();
+        var destRegister = instruction.Operands[1].GetRegisterName();
 
         var address = vm.GetRegisterValue(addressRegister);
         var data = vm.GetMemoryValue(address);
 
-        vm.SetRegisterValue(dataRegister, data);
+        vm.SetRegisterValue(destRegister, data);
 
         programCounter++;
     }
@@ -134,6 +138,10 @@ public static class ProgramRunner
         if (zeroValue == 0)
         {
             programCounter = vm.GetRegisterValue(addressRegister);
+        }
+        else
+        {
+            programCounter++;
         }
     }
 
