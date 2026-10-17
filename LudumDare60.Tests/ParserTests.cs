@@ -29,4 +29,16 @@ public class ParserTests
 
         Assert.That(operand2.GetRegisterName(), Is.EqualTo(RegisterName.R2));
     }
+    [Test]
+    public void ParseInstructions_SingleHaltInstruction_ParsesCorrectly()
+    {
+        var program = "HALT";
+
+        var instructions = Parser.ParseInstructions(program);
+
+        Assert.AreEqual(instructions.Count, 1);
+        var instruction = instructions[0];
+        Assert.AreEqual(instruction.OpCode, OpCode.Halt);
+        Assert.AreEqual(instruction.Operands.Count, 0);
+    }
 }
