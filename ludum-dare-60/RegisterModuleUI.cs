@@ -20,9 +20,9 @@ public partial class RegisterModuleUI : Control
         Unbind();
 
         _Register1.Bind(vm);
-        _Register1.Bind(vm);
-        _Register1.Bind(vm);
-        _Register1.Bind(vm);
+        _Register2.Bind(vm);
+        _Register3.Bind(vm);
+        _Register4.Bind(vm);
     }
 
     public void Unbind()
