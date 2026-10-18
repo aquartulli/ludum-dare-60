@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cn76og3w5lkq1"]
+
+[ext_resource type="Script" uid="uid://dx003xftl3olq" path="res://LevelSelectScene.cs" id="1_u3exd"]
+[ext_resource type="PackedScene" uid="uid://bbpldmgcq011s" path="res://LevelButtonTemplate.tscn" id="2_i0tut"]
+
+[node name="LevelSelectMenu" type="Control" unique_id=847839368]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u3exd")
+LevelButtonScene = ExtResource("2_i0tut")
+LevelResources = Array[Resource]([null])
+
+[node name="StartButton" type="Button" parent="." unique_id=837373171]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -15.5
+offset_right = 20.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1140401359]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=643338525]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1311393483]
+layout_mode = 2
+text = "Select Level"
+
+[node name="LevelGrid" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=862164771]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1802359763]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back to Main Menu"
