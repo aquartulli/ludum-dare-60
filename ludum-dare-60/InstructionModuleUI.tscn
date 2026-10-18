@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://0a7x4iu35as8" path="res://InstructionModuleUI.cs" id="2_ch0ti"]
 [ext_resource type="PackedScene" uid="uid://ds8cjpo5mpf6k" path="res://PunchCard.tscn" id="3_jl583"]
 [ext_resource type="Texture2D" uid="uid://cyr3mh7mn3v4y" path="res://Manual.png" id="4_ch0ti"]
+[ext_resource type="AudioStream" uid="uid://3gqfbdvtdjco" path="res://Audio/Error.wav" id="4_jl583"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ul38a"]
 bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
@@ -35,6 +36,21 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0.6, 0, 0, 1), Color(0.6, 0, 0, 0)]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_jl583")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_jl583"]
 length = 0.001
@@ -120,6 +136,8 @@ text = "FETCH"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/HBoxContainer/VBoxContainer/FetchButtonUnderlay/FetchButton" unique_id=1641907822]
 libraries/ = SubResource("AnimationLibrary_sqiaf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/HBoxContainer/VBoxContainer/FetchButtonUnderlay/FetchButton" unique_id=1220296514]
 
 [node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1704961834]
 layout_mode = 2
