@@ -7,5 +7,6 @@ script = ExtResource("1_j8wg3")
 _Name = "READY SET GO"
 _Program = "SET R1 15
 SET R2 71
-SET R4 55"
+SET R4 55
+HALT"
 metadata/_custom_type_script = "uid://dfpmadvby3xf8"

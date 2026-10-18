@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="LevelDefinition" format=3 uid="uid://dqt4jt6uuayup"]
+
+[ext_resource type="Script" uid="uid://dfpmadvby3xf8" path="res://LevelDefinition.cs" id="1_d6ttl"]
+
+[resource]
+script = ExtResource("1_d6ttl")
+_Name = "I LIKE TO MOVE IT MOVE IT"
+_Program = "SET R1 255
+MOV R1 R4
+SET R1 128
+MOV R1 R3
+MOV R4 R1
+HALT
+"
+metadata/_custom_type_script = "uid://dfpmadvby3xf8"

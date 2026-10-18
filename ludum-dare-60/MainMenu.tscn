@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ct6hby6sbov4v"]
 
 [ext_resource type="Script" uid="uid://cit6frrik2cil" path="res://MainMenu.cs" id="1_i26rj"]
+[ext_resource type="PackedScene" uid="uid://ds8cjpo5mpf6k" path="res://PunchCard.tscn" id="2_eiy7p"]
 
 [node name="MainMenu" type="Control" unique_id=847839368]
 layout_mode = 3
@@ -11,58 +12,80 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i26rj")
 
-[node name="StartButton" type="Button" parent="." unique_id=837373171]
-unique_name_in_owner = true
+[node name="Control" type="Control" parent="." unique_id=1474310573]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.51000005
-anchor_top = 0.51000005
-anchor_right = 0.51000005
-anchor_bottom = 0.51000005
-offset_left = -38.200073
-offset_top = -65.80005
-offset_right = 41.299927
-offset_bottom = -13.300049
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 400.0
+offset_top = -89.0
+offset_right = 440.0
+grow_vertical = 2
+rotation = -0.20943952
+scale = Vector2(0.8, 0.8)
+
+[node name="PunchCard" parent="Control" unique_id=1246786685 instance=ExtResource("2_eiy7p")]
+Text = "HELLO"
+
+[node name="Control2" type="Control" parent="." unique_id=816962504]
+layout_mode = 1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -429.0
+offset_top = 128.5
+offset_right = -429.0
+offset_bottom = 128.5
+grow_horizontal = 0
+grow_vertical = 2
+rotation = 0.25481808
+scale = Vector2(0.8, 0.8)
+
+[node name="PunchCard" parent="Control2" unique_id=778923548 instance=ExtResource("2_eiy7p")]
+Text = "WORLD"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=100404733]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -29.0
+offset_right = 23.0
+offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 64
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=837373171]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
 text = "Play"
 
-[node name="OptionsButton" type="Button" parent="." unique_id=1436397689]
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1270772105]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.51000005
-anchor_top = 0.60400003
-anchor_right = 0.51000005
-anchor_bottom = 0.60400003
-offset_left = -38.200073
-offset_top = -81.32001
-offset_right = 41.299927
-offset_bottom = -28.820007
-grow_horizontal = 2
-grow_vertical = 2
-text = "Options
-"
-
-[node name="QuitButton" type="Button" parent="." unique_id=1270772105]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.51000005
-anchor_top = 0.60400003
-anchor_right = 0.51000005
-anchor_bottom = 0.60400003
-offset_left = -37.200073
-offset_top = 11.679993
-offset_right = 42.299927
-offset_bottom = 64.17999
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(256, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
 text = "Quit
 
 "
 
-[node name="QuitConfirmationDialog" type="ConfirmationDialog" parent="." unique_id=1414660426]
-unique_name_in_owner = true
-ok_button_text = "Yes"
-dialog_text = "Are you sure you want to quit?"
+[node name="Label" type="Label" parent="." unique_id=1777021473]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 100.0
+offset_right = 300.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "FALCON MAINFRAME"
+horizontal_alignment = 1
+vertical_alignment = 1
