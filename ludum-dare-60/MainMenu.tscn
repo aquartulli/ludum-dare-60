@@ -14,15 +14,55 @@ script = ExtResource("1_i26rj")
 [node name="StartButton" type="Button" parent="." unique_id=837373171]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.5
-offset_top = -15.5
-offset_right = 20.5
-offset_bottom = 15.5
+anchors_preset = -1
+anchor_left = 0.51000005
+anchor_top = 0.51000005
+anchor_right = 0.51000005
+anchor_bottom = 0.51000005
+offset_left = -38.200073
+offset_top = -65.80005
+offset_right = 41.299927
+offset_bottom = -13.300049
 grow_horizontal = 2
 grow_vertical = 2
 text = "Play"
+
+[node name="OptionsButton" type="Button" parent="." unique_id=1436397689]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51000005
+anchor_top = 0.60400003
+anchor_right = 0.51000005
+anchor_bottom = 0.60400003
+offset_left = -38.200073
+offset_top = -81.32001
+offset_right = 41.299927
+offset_bottom = -28.820007
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options
+"
+
+[node name="QuitButton" type="Button" parent="." unique_id=1270772105]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51000005
+anchor_top = 0.60400003
+anchor_right = 0.51000005
+anchor_bottom = 0.60400003
+offset_left = -37.200073
+offset_top = 11.679993
+offset_right = 42.299927
+offset_bottom = 64.17999
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit
+
+"
+
+[node name="QuitConfirmationDialog" type="ConfirmationDialog" parent="." unique_id=1414660426]
+unique_name_in_owner = true
+ok_button_text = "Yes"
+dialog_text = "Are you sure you want to quit?"
