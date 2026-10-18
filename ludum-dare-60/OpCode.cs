@@ -23,4 +23,6 @@ public sealed class OpCode
     public static OpCode JumpZero { get; } = new("JumpZero", "JZ", [InstructionOperandType.Register, InstructionOperandType.Register]);
     public static OpCode Out { get; } = new("Out", "OUT", [InstructionOperandType.Register]);
     public static OpCode Halt { get; } = new("Halt", "HALT", []);
+
+    public override string ToString() => AssemblyText;
 }

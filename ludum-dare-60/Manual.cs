@@ -1,4 +1,5 @@
 using Godot;
+using System.Linq;
 
 public partial class Manual : Control
 {

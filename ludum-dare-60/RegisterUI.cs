@@ -33,6 +33,7 @@ public partial class RegisterUI : Node
     public void Bind(VirtualMachine vm)
     {
         _Vm = vm;
+        _Data.Value = vm.GetRegisterValue(_RegisterName);
     }
 
     public void Unbind()

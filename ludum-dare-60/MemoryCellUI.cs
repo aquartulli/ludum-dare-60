@@ -18,6 +18,10 @@ public partial class MemoryCellUI : Control
             }
 
             label.Text = $"0x{value:X2}";
+            EmitSignalValueChanged();
         }
     }
+
+    [Signal]
+    public delegate void ValueChangedEventHandler();
 }

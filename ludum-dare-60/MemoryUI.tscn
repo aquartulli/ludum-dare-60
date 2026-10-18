@@ -42,6 +42,7 @@ text = "ADDRESS"
 unique_name_in_owner = true
 layout_mode = 2
 max_value = 255.0
+update_on_text_changed = true
 
 [node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1760076199]
 layout_mode = 2
@@ -58,6 +59,7 @@ text = "DATA"
 unique_name_in_owner = true
 layout_mode = 2
 max_value = 255.0
+update_on_text_changed = true
 
 [node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1187094977]
 layout_mode = 2

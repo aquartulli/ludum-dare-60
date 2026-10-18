@@ -54,7 +54,7 @@ public partial class InstructionModuleUI : Control
     private void OnFetchButtonPressed()
     {
         var programCounter = (byte)_ProgramCounter.Value;
-        if (programCounter < 0 || programCounter > _Instructions.Count)
+        if (programCounter < 0 || programCounter >= _Instructions.Count)
         {
             EmitSignalFetchFailed();
             return;
