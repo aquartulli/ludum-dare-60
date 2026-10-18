@@ -3,9 +3,6 @@ using System.Collections.Generic;
 
 public partial class Level : Node
 {
-    [Export]
-    private LevelDefinition _TestLevel;
-
     private Label _LevelName;
     private ComputerUI _ComputerUI;
     private Control _PauseMenuModal;
@@ -34,16 +31,6 @@ public partial class Level : Node
         _ResumeButton.Pressed += OnResumeButtonPressed;
         _ResetButton.Pressed += OnResetButtonPressed;
         _QuitButton.Pressed += OnQuitButtonPressed;
-
-        // ------------------------------------------
-        // Was testing this, but the game needs to call Initialize to test it properly. Also need to push LevelDefinition for zac.
-    }
-
-    public override void _Ready()
-    {
-        base._Ready();
-
-        Initialize(_TestLevel);
     }
 
     public void Initialize(LevelDefinition levelDefinition)

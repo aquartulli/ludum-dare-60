@@ -2,7 +2,17 @@
 
 [ext_resource type="Script" uid="uid://db3h03bno2bfh" path="res://Main.cs" id="1_glv2v"]
 [ext_resource type="PackedScene" uid="uid://ct6hby6sbov4v" path="res://MainMenu.tscn" id="2_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://5o110yutftmf" path="res://Level.tscn" id="3_cm0pq"]
+[ext_resource type="Script" uid="uid://dfpmadvby3xf8" path="res://LevelDefinition.cs" id="4_fos0i"]
+
+[sub_resource type="Resource" id="Resource_3dxm6"]
+script = ExtResource("4_fos0i")
+_Name = "TEST"
+_Program = "SET R1 123"
+metadata/_custom_type_script = "uid://dfpmadvby3xf8"
 
 [node name="Main" type="Node" unique_id=618935490]
 script = ExtResource("1_glv2v")
 _MainMenuScene = ExtResource("2_uu6xs")
+_LevelScene = ExtResource("3_cm0pq")
+_TestLevel = SubResource("Resource_3dxm6")

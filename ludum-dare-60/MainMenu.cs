@@ -4,14 +4,19 @@ public partial class MainMenu : Control
 {
     private Button _StartButton;
 
+    [Signal]
+    public delegate void StartRequestedEventHandler();
+
     public override void _EnterTree()
     {
         _StartButton = GetNode<Button>("%StartButton");
         _StartButton.Pressed += OnStartButtonPressed;
     }
 
-    private void OnStartButtonPressed()
+    public override void _ExitTree()
     {
-        GD.Print("Start Button");
+        _StartButton.Pressed -= OnStartButtonPressed;
     }
+
+    private void OnStartButtonPressed() => EmitSignalStartRequested();
 }
