@@ -3,6 +3,7 @@
 [ext_resource type="StyleBox" uid="uid://cg110xncp6j0v" path="res://ComputerPanelStyleBox.tres" id="1_xj1pe"]
 [ext_resource type="Script" uid="uid://0a7x4iu35as8" path="res://InstructionModuleUI.cs" id="2_ch0ti"]
 [ext_resource type="PackedScene" uid="uid://ds8cjpo5mpf6k" path="res://PunchCard.tscn" id="3_jl583"]
+[ext_resource type="Texture2D" uid="uid://cyr3mh7mn3v4y" path="res://Manual.png" id="4_ch0ti"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ul38a"]
 bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
@@ -65,3 +66,16 @@ unique_name_in_owner = true
 layout_mode = 2
 focus_mode = 0
 text = "FETCH"
+
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1704961834]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DocumentationButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1558554845]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.8047426, 0.80474263, 0.8047426, 1)
+theme_override_colors/icon_pressed_color = Color(0.68307734, 0.6830774, 0.68307734, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_icons/icon = ExtResource("4_ch0ti")
+flat = true

@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://5o110yutftmf"]
+
+[ext_resource type="PackedScene" uid="uid://ca3ha7wdr57kh" path="res://ComputerUI.tscn" id="1_bexhn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bexhn"]
+font_size = 32
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bexhn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7iv1"]
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+bg_color = Color(0.13682574, 0.13682574, 0.13682568, 1)
+shadow_size = 8
+shadow_offset = Vector2(4, 4)
+
+[node name="Level" type="Node" unique_id=1268123187]
+
+[node name="ComputerUI" parent="." unique_id=104430449 instance=ExtResource("1_bexhn")]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -700.0
+offset_top = -360.0
+offset_right = 700.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelName" type="Label" parent="." unique_id=1115522795]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -45.5
+offset_top = 50.0
+offset_right = 45.5
+grow_horizontal = 2
+text = "Level Name"
+label_settings = SubResource("LabelSettings_bexhn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseMenuModal" type="Panel" parent="." unique_id=196337157]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bexhn")
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseMenuModal" unique_id=1312256420]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t7iv1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuModal/PanelContainer" unique_id=888759156]
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="PauseMenuModal/PanelContainer/VBoxContainer" unique_id=94985671]
+layout_mode = 2
+theme_type_variation = &"PauseMenuButton"
+text = "RESUME"
+
+[node name="ResetButton" type="Button" parent="PauseMenuModal/PanelContainer/VBoxContainer" unique_id=516355271]
+layout_mode = 2
+theme_type_variation = &"PauseMenuButton"
+text = "RESET"
+
+[node name="QuitButton" type="Button" parent="PauseMenuModal/PanelContainer/VBoxContainer" unique_id=1743572196]
+layout_mode = 2
+theme_type_variation = &"PauseMenuButton"
+text = "QUIT"

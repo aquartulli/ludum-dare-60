@@ -24,6 +24,10 @@ window/size/viewport_height=1080
 
 project/assembly_name="LudumDare60"
 
+[gui]
+
+theme/custom="uid://dxhecvddlg7q0"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

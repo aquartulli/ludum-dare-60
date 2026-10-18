@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b4f0f0ujblr67" path="res://RegisterModuleUI.tscn" id="1_stob6"]
 [ext_resource type="PackedScene" uid="uid://bo1rpmxhx1jjd" path="res://InstructionModuleUI.tscn" id="2_el7wc"]
 [ext_resource type="PackedScene" uid="uid://dor1axyhva0ip" path="res://MemoryUI.tscn" id="4_el7wc"]
+[ext_resource type="PackedScene" uid="uid://d1he6hfeo40jr" path="res://Manual.tscn" id="5_vje1y"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ul38a"]
 size = Vector2(1400, 720)
@@ -83,3 +84,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_stob6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_el7wc")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vje1y")
 text = "HALT"
+
+[node name="Manual" parent="." unique_id=693423710 instance=ExtResource("5_vje1y")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+offset_left = -360.0
+offset_top = -240.0
+offset_right = 360.0
+offset_bottom = 240.0

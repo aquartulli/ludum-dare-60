@@ -7,6 +7,7 @@ public partial class ComputerUI : Node
     private RegisterModuleUI _RegisterModuleUI;
     private InstructionModuleUI _InstructionModuleUI;
     private Button _HaltButton;
+    private Manual _Manual;
 
     [Signal]
     public delegate void HaltRequestedEventHandler();
@@ -17,11 +18,19 @@ public partial class ComputerUI : Node
 
         _MemoryUI = GetNode<MemoryUI>("%MemoryModuleUI");
         _RegisterModuleUI = GetNode<RegisterModuleUI>("%RegisterModuleUI");
-        _InstructionModuleUI = GetNode<InstructionModuleUI>("%InstructionModuleUI");
-        _HaltButton = GetNode<Button>("%HaltButton");
 
+        _InstructionModuleUI = GetNode<InstructionModuleUI>("%InstructionModuleUI");
+        _InstructionModuleUI.OpenManualRequested += OnOpenManualRequested;
+
+        _HaltButton = GetNode<Button>("%HaltButton");
         _HaltButton.Pressed += OnHaltButtonPressed;
+
+        _Manual = GetNode<Manual>("%Manual");
+        _Manual.CloseRequested += OnManualCloseRequested;
     }
+
+    private void OnManualCloseRequested() => _Manual.Hide();
+    private void OnOpenManualRequested() => _Manual.Show();
 
     public void Bind(VirtualMachine vm, IReadOnlyList<Instruction> instructions)
     {
