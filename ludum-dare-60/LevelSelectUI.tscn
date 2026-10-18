@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cn76og3w5lkq1"]
+
+[ext_resource type="Script" uid="uid://dx003xftl3olq" path="res://LevelSelectUI.cs" id="1_u3exd"]
+[ext_resource type="PackedScene" uid="uid://cfkuj8iyjr4nh" path="res://LevelSelectItemUI.tscn" id="2_nqumt"]
+
+[node name="LevelSelectUI" type="Control" unique_id=847839368]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u3exd")
+_LevelSelectItemScene = ExtResource("2_nqumt")
+
+[node name="Label" type="Label" parent="." unique_id=1311393483]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -56.5
+offset_top = 64.0
+offset_right = 56.5
+offset_bottom = 19.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "SELECT LEVEL"
+
+[node name="BackButton" type="Button" parent="." unique_id=1802359763]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_bottom = -64.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "BACK"
+
+[node name="LevelContainer" type="GridContainer" parent="." unique_id=1271833946]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -792.0
+offset_top = 200.0
+offset_right = 792.0
+grow_horizontal = 2
+theme_override_constants/h_separation = 128
+theme_override_constants/v_separation = 32
+columns = 4

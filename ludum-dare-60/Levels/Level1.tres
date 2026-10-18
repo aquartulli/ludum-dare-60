@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelDefinition" format=3 uid="uid://bws4oeq6n7r4u"]
+
+[ext_resource type="Script" uid="uid://dfpmadvby3xf8" path="res://LevelDefinition.cs" id="1_j8wg3"]
+
+[resource]
+script = ExtResource("1_j8wg3")
+_Name = "READY SET GO"
+_Program = "SET R1 15
+SET R2 71
+SET R4 55"
+metadata/_custom_type_script = "uid://dfpmadvby3xf8"

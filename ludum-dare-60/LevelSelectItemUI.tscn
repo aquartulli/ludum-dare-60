@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cfkuj8iyjr4nh"]
+
+[ext_resource type="Script" uid="uid://c54unuvalj6iq" path="res://LevelSelectItemUI.cs" id="1_hovm1"]
+
+[node name="LevelSelectItemUI" type="BoxContainer" unique_id=2098766489]
+offset_right = 102.0
+offset_bottom = 27.0
+script = ExtResource("1_hovm1")
+
+[node name="PanelContainer" type="Panel" parent="." unique_id=254429976]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer" unique_id=1262721151]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.6830766, 0.68307763, 0.68307686, 1)
+theme_override_colors/font_pressed_color = Color(0.4506483, 0.4506483, 0.45064825, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "LEVEL NAME"
+flat = true
+autowrap_mode = 3
