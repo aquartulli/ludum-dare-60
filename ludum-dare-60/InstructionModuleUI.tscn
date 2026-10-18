@@ -13,6 +13,91 @@ corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 
+[sub_resource type="Animation" id="Animation_sqiaf"]
+resource_name = "FetchSuccess"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-200, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ujuud"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ddvr"]
+_data = {
+&"FetchSuccess": SubResource("Animation_sqiaf"),
+&"RESET": SubResource("Animation_ujuud")
+}
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ch0ti"]
 resource_local_to_scene = true
 bg_color = Color(0.6, 0, 0, 0)
@@ -108,8 +193,10 @@ grow_vertical = 2
 
 [node name="PunchCard" parent="VBoxContainer/HBoxContainer/Panel/PunchCardTarget" unique_id=1246786685 instance=ExtResource("3_jl583")]
 unique_name_in_owner = true
-visible = false
 scale = Vector2(0.8, 0.8)
+
+[node name="PunchCardAnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/HBoxContainer/Panel/PunchCardTarget/PunchCard" unique_id=396226196]
+libraries/ = SubResource("AnimationLibrary_0ddvr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=501616558]
 layout_mode = 2
@@ -134,7 +221,7 @@ layout_mode = 2
 focus_mode = 0
 text = "FETCH"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/HBoxContainer/VBoxContainer/FetchButtonUnderlay/FetchButton" unique_id=1641907822]
+[node name="FetchButtonAnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/HBoxContainer/VBoxContainer/FetchButtonUnderlay/FetchButton" unique_id=1641907822]
 libraries/ = SubResource("AnimationLibrary_sqiaf")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/HBoxContainer/VBoxContainer/FetchButtonUnderlay/FetchButton" unique_id=1220296514]
@@ -152,4 +239,5 @@ theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_icons/icon = ExtResource("4_ch0ti")
 flat = true
 
-[connection signal="FetchFailed" from="." to="VBoxContainer/HBoxContainer/VBoxContainer/FetchButtonUnderlay/FetchButton/AnimationPlayer" method="play" binds= ["FetchFailed"]]
+[connection signal="FetchFailed" from="." to="VBoxContainer/HBoxContainer/VBoxContainer/FetchButtonUnderlay/FetchButton/FetchButtonAnimationPlayer" method="play" binds= ["FetchFailed"]]
+[connection signal="FetchedInstruction" from="." to="VBoxContainer/HBoxContainer/Panel/PunchCardTarget/PunchCard/PunchCardAnimationPlayer" method="play" binds= ["FetchSuccess"]]

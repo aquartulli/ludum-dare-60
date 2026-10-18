@@ -8,7 +8,8 @@
 [sub_resource type="Resource" id="Resource_3dxm6"]
 script = ExtResource("4_fos0i")
 _Name = "TEST"
-_Program = "SET R1 123"
+_Program = "SET R1 123
+MOV R1 R2"
 metadata/_custom_type_script = "uid://dfpmadvby3xf8"
 
 [node name="Main" type="Node" unique_id=618935490]

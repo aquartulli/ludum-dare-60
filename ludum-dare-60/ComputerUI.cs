@@ -8,6 +8,7 @@ public partial class ComputerUI : Node
     private InstructionModuleUI _InstructionModuleUI;
     private Button _HaltButton;
     private Manual _Manual;
+    private AnimationPlayer _ManualAnimationPlayer;
 
     [Signal]
     public delegate void HaltRequestedEventHandler();
@@ -27,10 +28,12 @@ public partial class ComputerUI : Node
 
         _Manual = GetNode<Manual>("%Manual");
         _Manual.CloseRequested += OnManualCloseRequested;
+
+        _ManualAnimationPlayer = GetNode<AnimationPlayer>("%ManualAnimationPlayer");
     }
 
-    private void OnManualCloseRequested() => _Manual.Hide();
-    private void OnOpenManualRequested() => _Manual.Show();
+    private void OnManualCloseRequested() => _ManualAnimationPlayer.Play("Close");
+    private void OnOpenManualRequested() => _ManualAnimationPlayer.Play("Open");
 
     public void Bind(VirtualMachine vm, IReadOnlyList<Instruction> instructions)
     {

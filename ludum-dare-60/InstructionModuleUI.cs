@@ -37,6 +37,17 @@ public partial class InstructionModuleUI : Control
         Unbind();
 
         _Instructions = instructions;
+        
+        if (_Instructions.Count == 0)
+        {
+            _PunchCard.Hide();
+        }
+        else
+        {
+            var instruction = _Instructions[0];
+            _PunchCard.Text = instruction.ToString();
+            _PunchCard.Show();
+        }
     }
 
     public void Unbind()
@@ -63,6 +74,7 @@ public partial class InstructionModuleUI : Control
         var instruction = _Instructions[programCounter];
         _PunchCard.Text = instruction.ToString();
         _PunchCard.Show();
+        EmitSignalFetchedInstruction();
     }
 
     private void OnManualButtonPressed() => EmitSignalOpenManualRequested();
