@@ -1,6 +1,5 @@
 using Godot;
 using System;
-using System.Linq;
 
 [Tool]
 public partial class PunchCard : Node2D
@@ -15,9 +14,12 @@ public partial class PunchCard : Node2D
         get => _Text;
         set
         {
-            if (!value.All(c => PunchValues.Contains(c)))
+            foreach (char c in value)
             {
-                throw new ArgumentException("String contains invalid characters.");
+                if (!PunchValues.Contains(c))
+                {
+                    throw new ArgumentException($"String \"{value}\" contains invalid character '{c}'.");
+                }
             }
 
             if (value.Length > _MaxStringLength)

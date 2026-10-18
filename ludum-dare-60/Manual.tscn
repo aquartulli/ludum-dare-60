@@ -1,0 +1,253 @@
+[gd_scene format=3 uid="uid://d1he6hfeo40jr"]
+
+[ext_resource type="Texture2D" uid="uid://cn75r1h53b3ep" path="res://ManualBackground.png" id="1_qht1w"]
+[ext_resource type="PackedScene" uid="uid://ddhklqu6sfor6" path="res://ManualEntryUI.tscn" id="2_ho87o"]
+[ext_resource type="Texture2D" uid="uid://du0keucpo8wk2" path="res://ArrowReverseIcon.png" id="2_w4qjf"]
+[ext_resource type="Script" uid="uid://1siyhb1gawn7" path="res://Manual.cs" id="2_y34m4"]
+[ext_resource type="Texture2D" uid="uid://cr0j0flsibapx" path="res://ArrowIcon.png" id="3_ho87o"]
+[ext_resource type="Script" uid="uid://ct2ddac5u21le" path="res://ManualEntry.cs" id="3_y34m4"]
+[ext_resource type="Texture2D" uid="uid://v8umcoyh1kna" path="res://CrossIcon.png" id="4_y34m4"]
+
+[sub_resource type="Resource" id="Resource_y34m4"]
+script = ExtResource("3_y34m4")
+OpCode = "HALT"
+Description = "HALT
+
+Ends the program."
+metadata/_custom_type_script = "uid://ct2ddac5u21le"
+
+[sub_resource type="Resource" id="Resource_wtnac"]
+script = ExtResource("3_y34m4")
+OpCode = "SET"
+Description = "SET DEST IMMEDIATE
+
+Sets a register to an immediate value.
+
+DEST - The resister that will receive the immediate value.
+IMMEDIATE - The immediate value.
+
+SET R1 123
+Sets register R1 to the value 123."
+metadata/_custom_type_script = "uid://ct2ddac5u21le"
+
+[sub_resource type="Resource" id="Resource_hj4sw"]
+script = ExtResource("3_y34m4")
+OpCode = "OUT"
+Description = "OUT SRC
+
+Outputs a value from a register.
+
+SRC - The register containing the value to output.
+
+OUT R1
+Outputs the value in register R1."
+metadata/_custom_type_script = "uid://ct2ddac5u21le"
+
+[sub_resource type="Resource" id="Resource_bf41u"]
+script = ExtResource("3_y34m4")
+OpCode = "MOV"
+Description = "MOV SRC DEST
+
+Copies a value from one register to another.
+
+SRC - The register containing the value to copy.
+DEST - The register that will receive the copied value.
+
+MOV R1 R2
+Copies the value in register R1 to register R2."
+metadata/_custom_type_script = "uid://ct2ddac5u21le"
+
+[sub_resource type="Resource" id="Resource_gl078"]
+script = ExtResource("3_y34m4")
+OpCode = "ADD"
+Description = "ADD OP1 OP2
+
+Adds the values in two registers together. If the sum is greater that 255, it will wrap around.
+
+OP1 - The register containing the first operand. The result will be written to this register.
+OP2 - The register containing the second operand.
+
+ADD R1 R2
+Adds the value in register R1 to the value in register R2 and stores the result in register R1."
+metadata/_custom_type_script = "uid://ct2ddac5u21le"
+
+[sub_resource type="Resource" id="Resource_muqdt"]
+script = ExtResource("3_y34m4")
+OpCode = "SUB"
+Description = "SUB OP1 OP2
+
+Subtracts the values in one register from the value in another register. If the difference is less than 0, it will wrap around.
+
+OP1 - The register containing the first operand. The result will be written to this register.
+OP2 - The register containing the second operand.
+
+SUB R1 R2
+Subtracts the value in register R2 from the value in register R1 and stores the result in register R1."
+metadata/_custom_type_script = "uid://ct2ddac5u21le"
+
+[sub_resource type="Resource" id="Resource_g8j2k"]
+script = ExtResource("3_y34m4")
+OpCode = "STORE"
+Description = "STORE ADDR DEST
+
+Stores the value in a register at the memory address specified by another register.
+
+ADDR - The register containing the memory address at which to store the value.
+SRC - The register containing the value to store.
+
+STORE R1 R2
+Stores the value in register R2 at the memory address specififed in register R1."
+metadata/_custom_type_script = "uid://ct2ddac5u21le"
+
+[sub_resource type="Resource" id="Resource_ehowj"]
+script = ExtResource("3_y34m4")
+OpCode = "LOAD"
+Description = "LOAD ADDR DEST
+
+Loads a value from a memory  address specified by a register into another register.
+
+ADDR - The register containing the memory address from which to load the value.
+DEST - The register that will receive the value.
+
+LOAD R1 R2
+Loads a value from the memory address specified specified in register R1 into register R2."
+metadata/_custom_type_script = "uid://ct2ddac5u21le"
+
+[sub_resource type="Resource" id="Resource_47w6r"]
+script = ExtResource("3_y34m4")
+OpCode = "JMP"
+Description = "JMP PC
+
+Jumps to an instruction specified by a register.
+
+PC - The register containing the instruction to jump to.
+
+JMP R1
+Jumps to the instruction in register R1."
+metadata/_custom_type_script = "uid://ct2ddac5u21le"
+
+[sub_resource type="Resource" id="Resource_cfqku"]
+script = ExtResource("3_y34m4")
+OpCode = "JZ"
+Description = "JZ PC CON
+
+Conditionally jumps to an instruction specified in a register if another register contains the value zero.
+
+PC - The register containing the instruction to jump to.
+CON - The register containing the condition value.
+
+JZ R1 R2
+Jumps to the instruction in register R1 if register R2 contains the value zero."
+metadata/_custom_type_script = "uid://ct2ddac5u21le"
+
+[node name="Manual" type="TextureRect" unique_id=693423710]
+self_modulate = Color(0.9166477, 0.94305587, 0.86835593, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qht1w")
+script = ExtResource("2_y34m4")
+_Entries = [SubResource("Resource_y34m4"), SubResource("Resource_wtnac"), SubResource("Resource_hj4sw"), SubResource("Resource_bf41u"), SubResource("Resource_gl078"), SubResource("Resource_muqdt"), SubResource("Resource_g8j2k"), SubResource("Resource_ehowj"), SubResource("Resource_47w6r"), SubResource("Resource_cfqku")]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=848108504]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 15
+
+[node name="Control" type="Control" parent="MarginContainer" unique_id=1614260751]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control" unique_id=2099500783]
+layout_mode = 0
+offset_right = 660.0
+offset_bottom = 435.0
+theme_override_constants/separation = 32
+
+[node name="Left" type="Control" parent="MarginContainer/Control/HBoxContainer" unique_id=19801664]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LeftPage" parent="MarginContainer/Control/HBoxContainer/Left" unique_id=1263266224 instance=ExtResource("2_ho87o")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 314.0
+offset_bottom = 435.0
+
+[node name="PreviousPageButton" type="Button" parent="MarginContainer/Control/HBoxContainer/Left" unique_id=990662552]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -72.0
+offset_right = 72.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_hover_color = Color(0.90602773, 0.9348705, 0.75041384, 1)
+theme_override_colors/icon_normal_color = Color(0.8741918, 0.90980667, 0.6721968, 1)
+theme_override_colors/icon_pressed_color = Color(0.7837683, 0.82618296, 0.5022159, 1)
+theme_override_colors/icon_hover_color = Color(0.90588236, 0.93333334, 0.7490196, 1)
+icon = ExtResource("2_w4qjf")
+flat = true
+
+[node name="Right" type="Control" parent="MarginContainer/Control/HBoxContainer" unique_id=1773365755]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightPage" parent="MarginContainer/Control/HBoxContainer/Right" unique_id=1702072696 instance=ExtResource("2_ho87o")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 314.0
+offset_bottom = 435.0
+
+[node name="NextPageButton" type="Button" parent="MarginContainer/Control/HBoxContainer/Right" unique_id=1315657599]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -72.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme_override_colors/font_hover_color = Color(0.90602773, 0.9348705, 0.75041384, 1)
+theme_override_colors/icon_normal_color = Color(0.8741918, 0.90980667, 0.6721968, 1)
+theme_override_colors/icon_pressed_color = Color(0.7837683, 0.82618296, 0.5022159, 1)
+theme_override_colors/icon_hover_color = Color(0.90588236, 0.93333334, 0.7490196, 1)
+icon = ExtResource("3_ho87o")
+flat = true
+
+[node name="CloseButton" type="Button" parent="MarginContainer/Control" unique_id=845289541]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_colors/icon_normal_color = Color(0.73300546, 0.7330054, 0.7330054, 1)
+theme_override_colors/icon_pressed_color = Color(0.61745477, 0.61745477, 0.6174547, 1)
+theme_override_colors/icon_hover_color = Color(0.8217887, 0.82178867, 0.82178867, 1)
+icon = ExtResource("4_y34m4")
+flat = true

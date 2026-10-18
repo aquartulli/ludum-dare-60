@@ -7,6 +7,7 @@ public partial class InstructionModuleUI : Control
     private SpinBox _ProgramCounter;
     private Button _FetchButton;
     private PunchCard _PunchCard;
+    private Button _ManualButton;
 
     private IReadOnlyList<Instruction> _Instructions;
 
@@ -16,14 +17,19 @@ public partial class InstructionModuleUI : Control
     [Signal]
     public delegate void FetchedInstructionEventHandler();
 
+    [Signal]
+    public delegate void OpenManualRequestedEventHandler();
+
     public override void _EnterTree()
     {
         _PunchCardTarget = GetNode("%PunchCardTarget");
         _ProgramCounter = GetNode<SpinBox>("%ProgramCounter");
         _FetchButton = GetNode<Button>("%FetchButton");
         _PunchCard = GetNode<PunchCard>("%PunchCard");
+        _ManualButton = GetNode<Button>("%DocumentationButton");
 
         _FetchButton.Pressed += OnFetchButtonPressed;
+        _ManualButton.Pressed += OnManualButtonPressed;
     }
 
     public void Bind(IReadOnlyList<Instruction> instructions)
@@ -48,7 +54,7 @@ public partial class InstructionModuleUI : Control
     private void OnFetchButtonPressed()
     {
         var programCounter = (byte)_ProgramCounter.Value;
-        if (programCounter < 0 || programCounter > _Instructions.Count)
+        if (programCounter < 0 || programCounter >= _Instructions.Count)
         {
             EmitSignalFetchFailed();
             return;
@@ -58,4 +64,6 @@ public partial class InstructionModuleUI : Control
         _PunchCard.Text = instruction.ToString();
         _PunchCard.Show();
     }
+
+    private void OnManualButtonPressed() => EmitSignalOpenManualRequested();
 }

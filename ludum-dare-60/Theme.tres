@@ -1,0 +1,9 @@
+[gd_resource type="Theme" format=3 uid="uid://dxhecvddlg7q0"]
+
+[sub_resource type="SystemFont" id="SystemFont_abrne"]
+font_names = PackedStringArray("Cascadia Code")
+
+[resource]
+default_font = SubResource("SystemFont_abrne")
+PauseMenuButton/base_type = &"Button"
+PauseMenuButton/font_sizes/font_size = 64
