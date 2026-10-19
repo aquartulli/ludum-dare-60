@@ -2,6 +2,16 @@
 
 [ext_resource type="Script" uid="uid://c54unuvalj6iq" path="res://LevelSelectItemUI.cs" id="1_hovm1"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hovm1"]
+bg_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.021434633, 0.021434639, 0.021434609, 1)
+shadow_size = 16
+shadow_offset = Vector2(8, 8)
+
 [node name="LevelSelectItemUI" type="BoxContainer" unique_id=2098766489]
 offset_right = 102.0
 offset_bottom = 27.0
@@ -10,6 +20,7 @@ script = ExtResource("1_hovm1")
 [node name="PanelContainer" type="Panel" parent="." unique_id=254429976]
 custom_minimum_size = Vector2(300, 200)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hovm1")
 
 [node name="Button" type="Button" parent="PanelContainer" unique_id=1262721151]
 unique_name_in_owner = true

@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://cn76og3w5lkq1"]
 
+[ext_resource type="Texture2D" uid="uid://720ld7f7wrvb" path="res://Background.png" id="1_jybtk"]
 [ext_resource type="Script" uid="uid://dx003xftl3olq" path="res://LevelSelectUI.cs" id="1_u3exd"]
 [ext_resource type="PackedScene" uid="uid://cfkuj8iyjr4nh" path="res://LevelSelectItemUI.tscn" id="2_nqumt"]
 
-[node name="LevelSelectUI" type="Control" unique_id=847839368]
-layout_mode = 3
+[node name="LevelSelectUI" type="TextureRect" unique_id=1516248171]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("1_jybtk")
 script = ExtResource("1_u3exd")
 _LevelSelectItemScene = ExtResource("2_nqumt")
 
@@ -35,6 +36,7 @@ anchor_bottom = 1.0
 offset_left = 64.0
 offset_bottom = -64.0
 grow_vertical = 0
+theme_type_variation = &"NavigationButton"
 theme_override_font_sizes/font_size = 64
 text = "BACK"
 

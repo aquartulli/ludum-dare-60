@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://dmnjpfmyqlr5c"]
+
+[ext_resource type="Texture2D" uid="uid://720ld7f7wrvb" path="res://Background.png" id="1_ldslo"]
+[ext_resource type="Texture2D" uid="uid://cn75r1h53b3ep" path="res://ManualBackground.png" id="2_462rh"]
+[ext_resource type="Script" uid="uid://bj0wljmalfmi8" path="res://HowToPlayScreen.cs" id="2_oa72e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa72e"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+shadow_size = 64
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_462rh"]
+grow_begin = 0.0
+grow_end = -128.0
+thickness = 4
+
+[node name="HowToPlayScreen" type="TextureRect" unique_id=415910298]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ldslo")
+script = ExtResource("2_oa72e")
+
+[node name="Panel" type="Panel" parent="." unique_id=1708682108]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -360.0
+offset_right = 540.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oa72e")
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=179073640]
+self_modulate = Color(0.91764706, 0.9411765, 0.8666667, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -360.0
+offset_right = 540.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_462rh")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/TextureRect" unique_id=411776882]
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/TextureRect/MarginContainer" unique_id=1428532132]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="LeftPage" type="Control" parent="Panel/TextureRect/MarginContainer/HBoxContainer" unique_id=1514176760]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/TextureRect/MarginContainer/HBoxContainer/LeftPage" unique_id=1651998597]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer" unique_id=2068264423]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "HOW TO PLAY"
+
+[node name="HSeparator" type="HSeparator" parent="Panel/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer" unique_id=840651695]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxLine_462rh")
+
+[node name="Label2" type="Label" parent="Panel/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer" unique_id=360861642]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "GOAL
+Your are the Falcon Mainframe. Your job is to execute the programs given to you. Just fetch an instruction and execute it!
+
+FETCHING
+The instruction module allows you to fetch instructions. Set the program counter to the instruction you want to fetch and press the FETCH button. Then read the punch card to decode the instruction. Each row of the punch card is one character, and the punch cards are read from top to bottom."
+autowrap_mode = 3
+
+[node name="RightPage" type="Control" parent="Panel/TextureRect/MarginContainer/HBoxContainer" unique_id=1022468051]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/TextureRect/MarginContainer/HBoxContainer/RightPage" unique_id=1157718743]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer" unique_id=1034670180]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "EXECUTE
+Once you've read the instruction you can execute it. The manual explains what each instruction does. Simply do what the manual says and you're done!
+
+HALTING
+Once you encounter a HALT instruction, press the big red button to end the program. If you executed the program correctly, you can move on to the next program!"
+autowrap_mode = 3
+
+[node name="BackButton" type="Button" parent="." unique_id=1488167938]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_bottom = -64.0
+grow_vertical = 0
+theme_type_variation = &"NavigationButton"
+theme_override_font_sizes/font_size = 64
+text = "BACK"

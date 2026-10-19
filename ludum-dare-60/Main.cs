@@ -7,6 +7,9 @@ public partial class Main : Node
     private PackedScene _MainMenuScene;
 
     [Export]
+    private PackedScene _HowToPlayScene;
+
+    [Export]
     private PackedScene _LevelSelectUIScene;
 
     [Export]
@@ -32,10 +35,21 @@ public partial class Main : Node
         AddChild(mainMenu);
 
         mainMenu.StartRequested += OnMainMenuStartRequested;
+        mainMenu.HowToPlayRequested += OnMainMenuHowToPlayRequested;
         mainMenu.QuitRequested += OnMainMenuQuitRequested;
     }
 
-    private void OnMainMenuQuitRequested() => GetTree().Quit();
+    private void SwitchToHowToPlayScreen()
+    {
+        ClearChildren();
+
+        var howToPlayScreen = _HowToPlayScene.Instantiate<HowToPlayScreen>();
+        AddChild(howToPlayScreen);
+
+        howToPlayScreen.BackRequested += OnHowToPlayBackRequested;
+    }
+
+    private void OnHowToPlayBackRequested() => SwitchToMainMenu();
 
     private void SwitchToLevelSelect()
     {
@@ -49,28 +63,16 @@ public partial class Main : Node
         levelSelectUI.BackRequested += OnLevelSelectBackRequested;
     }
 
-    private void OnLevelSelectBackRequested()
-    {
-        SwitchToMainMenu();
-    }
+    private void OnMainMenuStartRequested() => SwitchToLevelSelect();
+    private void OnMainMenuHowToPlayRequested() => SwitchToHowToPlayScreen();
+    private void OnMainMenuQuitRequested() => GetTree().Quit();
+    private void OnLevelSelectBackRequested() => SwitchToMainMenu();
+    private void OnLevelQuitRequested() => SwitchToMainMenu();
 
     private void OnLevelSelected(LevelDefinition levelDefinition)
     {
         _CurrentLevelIndex = Array.IndexOf(_Levels, levelDefinition);
         SwitchToLevel(levelDefinition);
-    }
-
-    private void ClearChildren()
-    {
-        foreach (var child in GetChildren())
-        {
-            child.QueueFree();
-        }
-    }
-
-    private void OnMainMenuStartRequested()
-    {
-        SwitchToLevelSelect();
     }
 
     private void SwitchToLevel(LevelDefinition levelDefinition)
@@ -94,5 +96,11 @@ public partial class Main : Node
         }
     }
 
-    private void OnLevelQuitRequested() => SwitchToMainMenu();
+    private void ClearChildren()
+    {
+        foreach (var child in GetChildren())
+        {
+            child.QueueFree();
+        }
+    }
 }

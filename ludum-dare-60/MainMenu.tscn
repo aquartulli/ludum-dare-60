@@ -1,15 +1,22 @@
 [gd_scene format=3 uid="uid://ct6hby6sbov4v"]
 
+[ext_resource type="Texture2D" uid="uid://720ld7f7wrvb" path="res://Background.png" id="1_h7a2f"]
 [ext_resource type="Script" uid="uid://cit6frrik2cil" path="res://MainMenu.cs" id="1_i26rj"]
 [ext_resource type="PackedScene" uid="uid://ds8cjpo5mpf6k" path="res://PunchCard.tscn" id="2_eiy7p"]
 
-[node name="MainMenu" type="Control" unique_id=847839368]
-layout_mode = 3
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_eiy7p"]
+color = Color(1, 1, 1, 1)
+grow_begin = 32.0
+grow_end = 32.0
+thickness = 2
+
+[node name="MainMenu" type="TextureRect" unique_id=1229641503]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("1_h7a2f")
 script = ExtResource("1_i26rj")
 
 [node name="Control" type="Control" parent="." unique_id=1474310573]
@@ -63,17 +70,25 @@ theme_override_constants/separation = 64
 unique_name_in_owner = true
 custom_minimum_size = Vector2(256, 100)
 layout_mode = 2
+theme_type_variation = &"NavigationButton"
 theme_override_font_sizes/font_size = 64
-text = "Play"
+text = "START"
+
+[node name="HowToPlayButton" type="Button" parent="VBoxContainer" unique_id=1458282174]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 100)
+layout_mode = 2
+theme_type_variation = &"NavigationButton"
+theme_override_font_sizes/font_size = 64
+text = "HOW TO PLAY"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1270772105]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(256, 100)
 layout_mode = 2
+theme_type_variation = &"NavigationButton"
 theme_override_font_sizes/font_size = 64
-text = "Quit
-
-"
+text = "QUIT"
 
 [node name="Label" type="Label" parent="." unique_id=1777021473]
 layout_mode = 1
@@ -89,3 +104,15 @@ theme_override_font_sizes/font_size = 64
 text = "FALCON MAINFRAME"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Label" unique_id=1052256371]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_eiy7p")

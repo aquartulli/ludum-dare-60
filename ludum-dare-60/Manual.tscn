@@ -8,6 +8,10 @@
 [ext_resource type="Script" uid="uid://ct2ddac5u21le" path="res://ManualEntry.cs" id="3_y34m4"]
 [ext_resource type="Texture2D" uid="uid://v8umcoyh1kna" path="res://CrossIcon.png" id="4_y34m4"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y34m4"]
+bg_color = Color(0, 0, 0, 0)
+shadow_size = 32
+
 [sub_resource type="Resource" id="Resource_y34m4"]
 script = ExtResource("3_y34m4")
 OpCode = "HALT"
@@ -140,24 +144,31 @@ JZ R1 R2
 Jumps to the instruction in register R1 if register R2 contains the value zero."
 metadata/_custom_type_script = "uid://ct2ddac5u21le"
 
-[node name="Manual" type="TextureRect" unique_id=693423710]
-self_modulate = Color(0.9166477, 0.94305587, 0.86835593, 1)
+[node name="Manual" type="Panel" unique_id=648590015]
+custom_minimum_size = Vector2(720, 480)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -360.0
+offset_top = -240.0
+offset_right = 360.0
+offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_qht1w")
+theme_override_styles/panel = SubResource("StyleBoxFlat_y34m4")
 script = ExtResource("2_y34m4")
 _Entries = [SubResource("Resource_y34m4"), SubResource("Resource_wtnac"), SubResource("Resource_hj4sw"), SubResource("Resource_bf41u"), SubResource("Resource_gl078"), SubResource("Resource_muqdt"), SubResource("Resource_g8j2k"), SubResource("Resource_ehowj"), SubResource("Resource_47w6r"), SubResource("Resource_cfqku")]
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=848108504]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=693423710]
+self_modulate = Color(0.9166477, 0.94305587, 0.86835593, 1)
+layout_mode = 1
+offset_right = 720.0
+offset_bottom = 480.0
+texture = ExtResource("1_qht1w")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=848108504]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -169,26 +180,26 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 15
 
-[node name="Control" type="Control" parent="MarginContainer" unique_id=1614260751]
+[node name="Control" type="Control" parent="TextureRect/MarginContainer" unique_id=1614260751]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control" unique_id=2099500783]
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/Control" unique_id=2099500783]
 layout_mode = 0
 offset_right = 660.0
 offset_bottom = 435.0
 theme_override_constants/separation = 32
 
-[node name="Left" type="Control" parent="MarginContainer/Control/HBoxContainer" unique_id=19801664]
+[node name="Left" type="Control" parent="TextureRect/MarginContainer/Control/HBoxContainer" unique_id=19801664]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LeftPage" parent="MarginContainer/Control/HBoxContainer/Left" unique_id=1263266224 instance=ExtResource("2_ho87o")]
+[node name="LeftPage" parent="TextureRect/MarginContainer/Control/HBoxContainer/Left" unique_id=1263266224 instance=ExtResource("2_ho87o")]
 unique_name_in_owner = true
 layout_mode = 0
 offset_right = 314.0
 offset_bottom = 435.0
 
-[node name="PreviousPageButton" type="Button" parent="MarginContainer/Control/HBoxContainer/Left" unique_id=990662552]
+[node name="PreviousPageButton" type="Button" parent="TextureRect/MarginContainer/Control/HBoxContainer/Left" unique_id=990662552]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 2
@@ -206,17 +217,17 @@ theme_override_colors/icon_hover_color = Color(0.90588236, 0.93333334, 0.7490196
 icon = ExtResource("2_w4qjf")
 flat = true
 
-[node name="Right" type="Control" parent="MarginContainer/Control/HBoxContainer" unique_id=1773365755]
+[node name="Right" type="Control" parent="TextureRect/MarginContainer/Control/HBoxContainer" unique_id=1773365755]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RightPage" parent="MarginContainer/Control/HBoxContainer/Right" unique_id=1702072696 instance=ExtResource("2_ho87o")]
+[node name="RightPage" parent="TextureRect/MarginContainer/Control/HBoxContainer/Right" unique_id=1702072696 instance=ExtResource("2_ho87o")]
 unique_name_in_owner = true
 layout_mode = 0
 offset_right = 314.0
 offset_bottom = 435.0
 
-[node name="NextPageButton" type="Button" parent="MarginContainer/Control/HBoxContainer/Right" unique_id=1315657599]
+[node name="NextPageButton" type="Button" parent="TextureRect/MarginContainer/Control/HBoxContainer/Right" unique_id=1315657599]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 3
@@ -237,7 +248,7 @@ theme_override_colors/icon_hover_color = Color(0.90588236, 0.93333334, 0.7490196
 icon = ExtResource("3_ho87o")
 flat = true
 
-[node name="CloseButton" type="Button" parent="MarginContainer/Control" unique_id=845289541]
+[node name="CloseButton" type="Button" parent="TextureRect/MarginContainer/Control" unique_id=845289541]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1

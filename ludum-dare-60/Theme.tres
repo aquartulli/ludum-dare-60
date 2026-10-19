@@ -1,9 +1,40 @@
 [gd_resource type="Theme" format=3 uid="uid://dxhecvddlg7q0"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yd3fu"]
+content_margin_left = 40.0
+content_margin_top = 20.0
+content_margin_right = 40.0
+content_margin_bottom = 20.0
+bg_color = Color(0.2051174, 0.20511746, 0.20511737, 1)
+shadow_size = 12
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abrne"]
+content_margin_left = 40.0
+content_margin_top = 20.0
+content_margin_right = 40.0
+content_margin_bottom = 20.0
+bg_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+shadow_size = 12
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23v3e"]
+content_margin_left = 40.0
+content_margin_top = 20.0
+content_margin_right = 40.0
+content_margin_bottom = 20.0
+bg_color = Color(0.08468998, 0.08468992, 0.08468989, 1)
+shadow_size = 12
+shadow_offset = Vector2(5, 5)
+
 [sub_resource type="SystemFont" id="SystemFont_abrne"]
 font_names = PackedStringArray("Cascadia Code")
 
 [resource]
 default_font = SubResource("SystemFont_abrne")
+NavigationButton/base_type = &"Button"
+NavigationButton/styles/hover = SubResource("StyleBoxFlat_yd3fu")
+NavigationButton/styles/normal = SubResource("StyleBoxFlat_abrne")
+NavigationButton/styles/pressed = SubResource("StyleBoxFlat_23v3e")
 PauseMenuButton/base_type = &"Button"
 PauseMenuButton/font_sizes/font_size = 64

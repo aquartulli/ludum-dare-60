@@ -4,12 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://ct6hby6sbov4v" path="res://MainMenu.tscn" id="2_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://5o110yutftmf" path="res://Level.tscn" id="3_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://cn76og3w5lkq1" path="res://LevelSelectUI.tscn" id="3_fos0i"]
+[ext_resource type="PackedScene" uid="uid://dmnjpfmyqlr5c" path="res://HowToPlayScreen.tscn" id="3_lgr22"]
 [ext_resource type="Resource" uid="uid://bws4oeq6n7r4u" path="res://Levels/Level1.tres" id="5_fos0i"]
 [ext_resource type="Resource" uid="uid://dqt4jt6uuayup" path="res://Levels/Level2.tres" id="6_3dxm6"]
 
 [node name="Main" type="Node" unique_id=618935490]
 script = ExtResource("1_glv2v")
 _MainMenuScene = ExtResource("2_uu6xs")
+_HowToPlayScene = ExtResource("3_lgr22")
 _LevelSelectUIScene = ExtResource("3_fos0i")
 _LevelScene = ExtResource("3_cm0pq")
 _Levels = [ExtResource("5_fos0i"), ExtResource("6_3dxm6")]
