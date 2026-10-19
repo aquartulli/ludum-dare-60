@@ -13,10 +13,17 @@ public partial class Level : Node
     private Button _EndScreenResetButton;
     private Button _EndScreenLevelSelectButton;
     private RichTextLabel _ExitCodeLabel;
+    private Label _EndScreenDescription;
 
     private bool _Won;
     private VirtualMachine _Vm;
     private IReadOnlyList<Instruction> _Instructions;
+
+    [Export(PropertyHint.MultilineText)]
+    private string _VictoryText;
+
+    [Export(PropertyHint.MultilineText)]
+    private string _DefeatText;
 
     [Export]
     private Color _ExitCode0Color = Colors.Green;
@@ -46,6 +53,7 @@ public partial class Level : Node
         _ExitCodeLabel = GetNode<RichTextLabel>("%ExitCodeLabel");
         _EndScreenResetButton = GetNode<Button>("%EndScreenResetButton");
         _EndScreenLevelSelectButton = GetNode<Button>("%EndScreenLevelSelectButton");
+        _EndScreenDescription = GetNode<Label>("%EndScreenDescription");
 
         _ResumeButton.Pressed += OnResumeButtonPressed;
         _ResetButton.Pressed += OnResetButtonPressed;
@@ -111,8 +119,11 @@ public partial class Level : Node
 
         _Won = _Vm.CompareStates(testVm);
         _EndScreenModal.Show();
+
         var colorString = _Won ? _ExitCode0Color.ToHtml() : _ExitCode1Color.ToHtml();
         var statusCodeString = _Won ? "0" : "1";
         _ExitCodeLabel.Text = $"EXIT CODE: [color=#{colorString}]{statusCodeString}[/color]";
+
+        _EndScreenDescription.Text = _Won ? _VictoryText : _DefeatText;
     }
 }

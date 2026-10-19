@@ -27,6 +27,27 @@ bg_color = Color(0.08468998, 0.08468992, 0.08468989, 1)
 shadow_size = 12
 shadow_offset = Vector2(5, 5)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1aya"]
+content_margin_left = 24.0
+content_margin_top = 16.0
+content_margin_right = 24.0
+content_margin_bottom = 16.0
+bg_color = Color(0.1584723, 0.15847233, 0.1584723, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4jqe"]
+content_margin_left = 24.0
+content_margin_top = 16.0
+content_margin_right = 24.0
+content_margin_bottom = 16.0
+bg_color = Color(0.099985994, 0.09998601, 0.099985965, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6xh3"]
+content_margin_left = 24.0
+content_margin_top = 16.0
+content_margin_right = 24.0
+content_margin_bottom = 16.0
+bg_color = Color(0.043039158, 0.04303915, 0.04303915, 1)
+
 [sub_resource type="SystemFont" id="SystemFont_abrne"]
 font_names = PackedStringArray("Cascadia Code")
 
@@ -38,3 +59,6 @@ NavigationButton/styles/normal = SubResource("StyleBoxFlat_abrne")
 NavigationButton/styles/pressed = SubResource("StyleBoxFlat_23v3e")
 PauseMenuButton/base_type = &"Button"
 PauseMenuButton/font_sizes/font_size = 64
+PauseMenuButton/styles/hover = SubResource("StyleBoxFlat_k1aya")
+PauseMenuButton/styles/normal = SubResource("StyleBoxFlat_j4jqe")
+PauseMenuButton/styles/pressed = SubResource("StyleBoxFlat_c6xh3")

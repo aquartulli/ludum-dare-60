@@ -92,8 +92,9 @@ public partial class Main : Node
         if (victory && _CurrentLevelIndex == _LevelsUnlocked - 1)
         {
             _LevelsUnlocked = Math.Min(_LevelsUnlocked + 1, _Levels.Length);
-            SwitchToLevelSelect();
         }
+
+        SwitchToLevelSelect();
     }
 
     private void ClearChildren()

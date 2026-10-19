@@ -22,16 +22,18 @@ shadow_offset = Vector2(4, 4)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bexhn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7iv1"]
-content_margin_left = 24.0
-content_margin_top = 24.0
-content_margin_right = 24.0
-content_margin_bottom = 24.0
+content_margin_left = 32.0
+content_margin_top = 32.0
+content_margin_right = 32.0
+content_margin_bottom = 32.0
 bg_color = Color(0.13682574, 0.13682574, 0.13682568, 1)
 shadow_size = 8
 shadow_offset = Vector2(4, 4)
 
 [node name="Level" type="Node" unique_id=1268123187]
 script = ExtResource("1_t7iv1")
+_VictoryText = "Program terminated successfully."
+_DefeatText = "Program terminated in unexpected state. Reset to try again."
 
 [node name="ComputerUI" parent="." unique_id=104430449 instance=ExtResource("1_bexhn")]
 unique_name_in_owner = true
@@ -49,7 +51,7 @@ grow_vertical = 2
 
 [node name="LevelName" type="Label" parent="." unique_id=1115522795]
 unique_name_in_owner = true
-anchors_preset = -1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -200.0
@@ -111,6 +113,15 @@ text = "EXIT CODE: [color=green]0[/color]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="EndScreenDescription" type="Label" parent="EndScreenModal/Panel/MarginContainer/VBoxContainer" unique_id=732465049]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 20
+text = "Description here."
+horizontal_alignment = 1
+autowrap_mode = 3
+
 [node name="Spacer" type="Control" parent="EndScreenModal/Panel/MarginContainer/VBoxContainer" unique_id=1449787231]
 layout_mode = 2
 size_flags_vertical = 3
@@ -121,6 +132,7 @@ layout_mode = 2
 [node name="EndScreenResetButton" type="Button" parent="EndScreenModal/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2000744234]
 unique_name_in_owner = true
 layout_mode = 2
+theme_type_variation = &"NavigationButton"
 theme_override_colors/font_color = Color(0.82606, 0.82606006, 0.82606, 1)
 theme_override_colors/font_pressed_color = Color(0.6052743, 0.6052743, 0.6052743, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -134,6 +146,7 @@ size_flags_horizontal = 3
 [node name="EndScreenLevelSelectButton" type="Button" parent="EndScreenModal/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=908570145]
 unique_name_in_owner = true
 layout_mode = 2
+theme_type_variation = &"NavigationButton"
 theme_override_colors/font_color = Color(0.82606, 0.82606006, 0.82606, 1)
 theme_override_colors/font_pressed_color = Color(0.6052743, 0.6052743, 0.6052743, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -167,6 +180,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_t7iv1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuModal/PanelContainer" unique_id=888759156]
 layout_mode = 2
+theme_override_constants/separation = 32
 
 [node name="ResumeButton" type="Button" parent="PauseMenuModal/PanelContainer/VBoxContainer" unique_id=94985671]
 unique_name_in_owner = true

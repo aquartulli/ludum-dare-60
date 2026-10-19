@@ -164,6 +164,10 @@ _data = {
 &"RESET": SubResource("Animation_7q0xv")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11d71"]
+bg_color = Color(0, 0, 0, 0)
+shadow_size = 16
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stob6"]
 content_margin_left = 10.0
 content_margin_top = 10.0
@@ -240,20 +244,23 @@ libraries/ = SubResource("AnimationLibrary_7v22v")
 
 [node name="ManualAudioStreamPlayer" type="AudioStreamPlayer" parent="Control/Manual" unique_id=1688604132]
 
-[node name="HaltButton" type="Button" parent="." unique_id=1923850136]
-unique_name_in_owner = true
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=142708045]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -600.0
-offset_top = -146.0
-offset_right = -50.0
-offset_bottom = -50.0
+offset_right = -100.0
+offset_bottom = -100.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_11d71")
+
+[node name="HaltButton" type="Button" parent="PanelContainer" unique_id=1923850136]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_stob6")
